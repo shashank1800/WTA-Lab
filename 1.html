@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+	<script type="text/javascript">
+		
+		function operation(opr){
+			val1 = parseInt(document.getElementById("val1").value);
+			val2 = parseInt(document.getElementById("val2").value);
+
+			res = document.getElementById("res");
+
+			switch(opr){
+			case '+':
+				res.innerHTML = val1+val2;
+				break;
+			case '-':
+				res.innerHTML = val1-val2;
+				break;
+
+			case '*':
+				res.innerHTML = val1*val2;
+				break;
+
+			case '/':
+				if(val2!=0)
+					res.innerHTML = val1/val2;
+				else
+					res.innerHTML = "INF";
+				break;
+			}
+		}
+		
+	</script>
+
+	<label>Value 1 :</label>
+	<input type="text" id="val1"><br>
+
+	<label>Value 2 :</label>
+	<input type="text" id="val2"><br>
+
+
+	<input type="button" value="Add" onclick="operation('+')">
+	<input type="button" value="Sub" onclick="operation('-')">
+	<input type="button" value="Mul" onclick="operation('*')">
+	<input type="button" value="Div" onclick="operation('/')">
+
+	<p id="res"></p>
+
+</body>
+</html>

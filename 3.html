@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style type="text/css">
+		#demo{
+			position: absolute;
+			left:50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}
+	</style>
+</head>
+<body>
+	<p id="demo"></p>
+
+	<script type="text/javascript">
+
+		var g = setInterval(grow,100);
+		var t = document.getElementById("demo");
+		var fs = 5;
+
+		function grow(){
+			fs+=5;
+			t.innerHTML = "GROWING";
+			t.setAttribute("style","font-size:"+fs+"px; color:red;");
+			if(fs>=50){
+				clearInterval(g);
+				var sk = setInterval(shrink,100);
+			}
+		}
+
+		function shrink(){
+			fs-=5;
+			t.innerHTML = "SHRINKING";
+			t.setAttribute("style","font-size:"+fs+"px; color:blue;");
+			if (fs === 5) {
+                clearInterval(sk);
+            }
+		}
+
+	</script>
+</body>
+</html>
